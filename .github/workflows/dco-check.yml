@@ -1,0 +1,42 @@
+name: DCO Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  dco:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate DCO sign-off on all commits in PR
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          base_ref="origin/${{ github.event.pull_request.base.ref }}"
+          head_ref="origin/${{ github.event.pull_request.head.ref }}"
+          git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+          commits=$(git rev-list --no-merges ${base_ref}..${head_ref})
+          if [ -z "$commits" ]; then
+            echo "No commits to check (perhaps a re-run)."
+            exit 0
+          fi
+          missing=0
+          while read -r c; do
+            msg=$(git log -1 --pretty=%B "$c")
+            if ! echo "$msg" | grep -iqE '^Signed-off-by: .+ <.+@.+>$'; then
+              echo "Commit $c is missing a valid Signed-off-by line"
+              echo "$msg"
+              echo "---"
+              missing=1
+            fi
+          done <<< "$commits"
+          if [ "$missing" -ne 0 ]; then
+            echo "DCO check failed. Please sign off your commits with 'git commit -s'."
+            exit 1
+          fi
+          echo "All commits have DCO sign-offs."
+

@@ -1,0 +1,4 @@
+Contact: mailto:security@lucyintheloop.org
+Policy: https://github.com/quantumpipes/lucy-in-the-loop/blob/main/SECURITY.md
+Preferred-Languages: en
+Canonical: https://github.com/quantumpipes/lucy-in-the-loop/blob/main/SECURITY.txt

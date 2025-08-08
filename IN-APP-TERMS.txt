@@ -1,0 +1,10 @@
+By continuing, you agree:
+
+- Not medical advice: Lucy is not a doctor/therapist/emergency service.
+- High-risk uses prohibited: do not use for clinical decisions, life support, or other high-risk contexts.
+- Outputs may be wrong: you must review and verify before acting.
+- Warranty/liability: provided AS IS; liability disclaimed to the maximum extent permitted by law.
+- Privacy: designed to run offline/local-first. See privacy policy.
+
+Press “I Agree” to continue.
+
