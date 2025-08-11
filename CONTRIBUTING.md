@@ -1,90 +1,252 @@
-## Contribution Guidelines
+# CONTRIBUTING.md
 
-*Thank you for your interest in contributing to Lucy in the Loop!* We welcome contributions from developers, mental health professionals, researchers, and enthusiasts who share our vision of an ethical, privacy-focused AI companion. The following guidelines will help you get started as a contributor and outline the standards for contributing code, documentation, or other improvements.
+Lucy in the Loop is an open‑source, privacy‑first AI companion for mental health, wellness, and peak performance. Our aim is to build capable software **without** burning out contributors. These guidelines explain how to contribute effectively, how we leverage AI (ethically), and how we protect everyone’s time, attention, and well‑being.
 
-### How to Contribute
+---
 
-We encourage a wide variety of contributions, including:
+## TL;DR
 
-* **🌟 New Feature Ideas:** If you have an idea for an enhancement or a new capability, feel free to suggest it. You can start a discussion or open an issue describing the feature.
-* **🐛 Bug Reports:** If you find a bug or security vulnerability, please report it through the issue tracker with details to help us reproduce and understand the problem.
-* **🛠 Code Contributions:** You can fix bugs, implement new features, improve performance, or refactor existing code. All code contributions are welcome as long as they align with the project’s goals and standards.
-* **📝 Documentation:** Improving documentation, writing tutorials, or translating docs into other languages are valuable contributions. Clear docs help everyone.
-* **✅ Testing:** You can contribute by writing test cases, performing manual testing, or reviewing others’ code changes for potential issues. Ensuring Lucy’s reliability across scenarios is a great way to help.
+* Be kind. Respect privacy. Default to transparency.
+* Use AI to **reduce** human toil, not to bypass judgment.
+* Every commit must include a DCO `Signed-off-by:` line.
+* Small, well‑scoped PRs with tests → faster reviews.
+* AI‑generated changes **require a human sponsor** and extra checks for safety, bias, and privacy.
+* Two approvals (human + automated) for normal code; more for sensitive areas.
+* No pager‑duty vibes: we use rotation, quiet hours, and AI triage so people aren’t overworked.
 
-No contribution is too small – even fixing typos or answering questions in the forum is appreciated!
+---
 
-### Ground Rules
+## What you can contribute
 
-Before you start, a few important ground rules:
+* **Code:** features, fixes, refactors, performance improvements.
+* **Safety & ethics:** red‑teaming prompts, guardrail rules, bias/fairness tests, risk assessments.
+* **Docs & tutorials:** setup guides, usage examples, diagrams, translations.
+* **Testing:** unit/integration tests, reproducibility harnesses, regression cases.
+* **Design & UX:** flows, microcopy, accessibility improvements.
+* **Research:** evidence summaries; evaluation protocols.
+* **Governance:** proposals (RFCs), triage, release checklists.
 
-* **Be Respectful and Ethical:** All contributors must adhere to our Code of Conduct (see above). Respect user privacy and follow our ethics guidelines in all your contributions. For example, code should not introduce biases or privacy risks.
-* **Discussion and Consensus:** For significant changes, please discuss your idea first (via GitHub issues or discussions) to gather feedback and ensure it aligns with the project roadmap. This helps avoid duplicate work and design misalignment.
-* **License Agreement:** By contributing, you agree that your contributions will be licensed under the same Apache 2.0 License as the project. This ensures we can distribute your code within Lucy in the Loop.
+No contribution is too small. Even fixing a typo helps.
 
-## Developer Certificate of Origin (DCO)
+---
 
-We use the DCO 1.1. To certify the originality of your contribution, add this
-line to each commit message:
+## Our principles (applied to contributions)
 
-Signed-off-by: Your Name <email@example.com>
+* **Autonomy & boundaries.** People have lives. Async by default, no expectation to respond off‑hours.
+* **Non‑maleficence.** Don’t introduce harm: psychological, privacy, or security.
+* **Justice.** Build for everyone; treat fairness regressions as critical bugs.
+* **Transparency.** Explain what you changed and why. Keep decision trails public.
+* **Privacy.** Local‑first, data‑minimizing. Never upload user data to third‑party services.
+* **Accountability.** Every change is attributable, reproducible, and reversible.
 
-Use `git commit -s` to add it automatically. See `DCO.md` for details.
+---
 
-### Development Workflow
+## Using AI ethically in this repo
 
-To contribute code or documentation, please follow this workflow:
+We love AI because it removes toil. We require **human judgment** where it matters.
 
-1. **Fork the Repository:** Click “Fork” on the GitHub repo (quantumpipes/lucy-in-the-loop) to create your own copy. Then clone your fork locally:
+**Allowed (encouraged):**
+
+* Drafting tests, docs, examples.
+* Generating scaffolds, refactors, or small fixes.
+* Triage suggestions, label predictions, changelog drafts.
+* Static analysis, security scans, bias/fairness test generation.
+
+**Requires a human sponsor & review:**
+
+* Any user‑facing behavior, especially mental‑health advice or tone.
+* Changes to safety filters, crisis flows, privacy/crypto code, data handling.
+* Model, prompt, or policy updates that can affect user outcomes.
+
+**Provenance in commits:**
+Include trailers when AI assists:
+
+```
+AI-Coauthored: yes
+AI-Agent: <name or tool>   # e.g., "RefactorBot v1.2"
+AI-Notes: <brief summary of what the agent did>
+```
+
+**Human responsibility:** A human sponsor must co‑review and add their own `Signed-off-by:`. AI cannot self‑approve or merge.
+
+**Data rules:** Never feed private or identifying data into external AI systems. Keep prompts and test inputs synthetic or sanitized.
+
+---
+
+## Ground rules for a healthy workload
+
+* **Rotation & quiet hours.** We rotate maintainers weekly; bots manage queues. Reviews pause during published quiet hours; “urgent” is reserved for security/safety.
+* **No DM for reviews.** Use Issues/PR comments to avoid pressure and keep context public.
+* **Reasonable SLAs.** Bot triage within 24 hours; human first‑pass within 5 business days.
+* **Small PRs win.** Aim for <300 lines diff where possible; split larger changes.
+
+---
+
+## Development workflow
+
+1. **Fork and clone**
 
    ```bash
-   git clone https://github.com/YourUsername/lucy-in-the-loop.git  
+   git clone https://github.com/quantumpipes/lucy-in-the-loop
    cd lucy-in-the-loop
    ```
 
+2. **Create a branch**
+   Use a descriptive name:
 
-2\. **Create a Branch:** Create a new git branch for your work. Use a descriptive name that reflects the change, for example `feature/add-mood-tracker` or `fix/memory-leak`.
+   ```
+   feature/add-mood-tracker
+   fix/race-in-safety-agent
+   docs/translate-onboarding-es
+   ```
 
-```bash
-git checkout -b feature/add-mood-tracker
+3. **Set up tooling**
+
+   * Python: PEP 8 style; run formatters/linters (e.g., `black`, `ruff`) and type checks (`mypy`) if configured.
+   * Pre‑commit hooks: `pre-commit install`.
+   * Run the full test suite locally before pushing.
+
+4. **Implement your change**
+
+   * Add/adjust tests. Aim for high coverage of new paths.
+   * For model/prompt/policy changes, include evaluation notes and before/after examples.
+   * For performance work, include a simple benchmark script and expected numbers.
+
+5. **Commit in logical chunks**
+
+   ```bash
+   git add -A
+   git commit -s -m "Safety: de‑escalate phrasing in crisis hints (resolves #123)"
+   # Use -s to add the DCO Signed-off-by line
+   ```
+
+   Include a concise **what/why**. If AI assisted, add the trailers shown above.
+
+6. **Push and open a PR**
+
+   ```bash
+   git push origin <your-branch>
+   ```
+
+   Fill out the PR template. Link issues. Explain risks, user impact, and test evidence. Mark as **Draft** if still iterating.
+
+---
+
+## Review & merge policy
+
+* **Automated checks** (required): build, tests, lint/type, security scan, license scan, safety/bias suite (where relevant).
+* **Approvals:**
+
+  * *Standard code:* ≥1 human maintainer + automated checks passing.
+  * *Sensitive surfaces* (safety, privacy, data handling, encryption, crisis flows, clinician‑facing content): ≥2 human approvals from different orgs **and** the safety/bias gates must pass.
+* **Merge etiquette:**
+  Maintainers merge during working hours. Avoid self‑merges unless trivial and documented. Squash‑merge by default; keep clear histories.
+
+**Backouts:** If a change causes harm, privacy regression, or breaks safety tests, maintainers may revert immediately with explanation and follow‑up issue.
+
+---
+
+## Sensitive‑change checklist (attach in PR if applicable)
+
+* Risk analysis: user impact, failure modes, mitigation.
+* Safety/bias evaluation results and datasets used.
+* Privacy notes: data touched, storage, retention, and access.
+* Rollout plan: flags, staged rollout, fallback/rollback.
+* Communications: release notes, user‑visible changes.
+
+---
+
+## Security & privacy
+
+* Never include secrets in code, test data, or issue text.
+* Use least‑privilege for any new permission.
+* No telemetry or hidden data collection. Logging must be user‑owned/local and scrubbed of PII.
+* Report vulnerabilities privately via the **Security Policy**; do not file public issues for exploitable bugs.
+
+---
+
+## Documentation & translations
+
+* Write clear, accessible English; define terms on first use.
+* Keep examples runnable. Prefer short, focused snippets.
+* For translations, note regional language variants and mental‑health terminology; coordinate with other translators when possible.
+* Docs PRs follow the same review path; screenshots/diagrams should include alt text.
+
+---
+
+## Issue triage (what happens after you click “submit”)
+
+* **Bot pass:** label, deduplicate, request minimal repro, route to subsystem.
+* **Triage rotation:** a human “sheriff” confirms scope/severity and assigns.
+* **States:** `needs-info` → `ready` → `in-progress` → `needs-review` → `done`.
+* **Escalation:** `security`, `safety`, and `privacy` labels jump the queue.
+
+---
+
+## Major changes (RFC)
+
+For cross‑cutting designs (new agent frameworks, storage formats, core prompts), open an **RFC**:
+
+* Problem statement, options considered, trade‑offs, risks, rollout plan.
+* 1–2 week comment period (longer if holidays).
+* Decision recorded with rationale; link to tracking issues.
+
+---
+
+## Governance (how decisions get made)
+
+* Subsystems have maintainers listed in `MAINTAINERS`.
+* A small **Technical Steering Committee** (TSC) arbitrates conflicts, approves RFCs, and guards project values.
+* Organisations may nominate maintainers, but no single org controls a majority of TSC seats. Conflicts of interest must be disclosed on relevant PRs.
+
+---
+
+## Licensing, DCO, and third‑party code
+
+* Code is Apache‑2.0. By contributing, you agree your contribution is licensed under the project license.
+* All commits must include the DCO line (use `git commit -s`):
+
+  ```
+  Signed-off-by: Your Name <you@example.com>
+  ```
+* When importing third‑party code/models, verify license compatibility and include notices in `THIRD_PARTY_LICENSES`.
+
+---
+
+## Commit message conventions (example)
+
+```
+feat(ui): add daily mood tracker with optional journaling (closes #123)
+
+- New component <MoodTracker/> with 3‑tap sentiment input
+- Local‑only storage; no network calls
+- Adds unit tests and a11y keyboard navigation
+
+AI-Coauthored: yes
+AI-Agent: RefactorBot v1.2
+AI-Notes: scaffolded tests and refactor suggestions
+Signed-off-by: Jane Doe <jane@ex.com>
 ```
 
+Prefixes we commonly use: `feat`, `fix`, `perf`, `docs`, `test`, `chore`, `refactor`, `safety`, `privacy`.
 
-Ensure each separate feature or fix goes in its own branch. This makes it easier to review and merge.
-3\. **Implement Your Changes:** Make code or documentation changes on your branch. Follow the project’s coding standards: we use **Python PEP 8** style for Python code (use consistent formatting and lint your code). Include comments for any complex logic, and make sure functions and classes are documented clearly. If you’re fixing a bug or adding a feature, try to write or update tests to cover it (our goal is high test coverage for all functionality).
-4\. **Commit Changes:** Commit your work in logical chunks with clear commit messages. A good commit message briefly describes *what* and *why* (e.g., “Fix crash in Safety Agent when message is empty”). Avoid large monolithic commits – smaller incremental commits are easier to review.
+---
 
-```bash
-git add .
-git commit -m "Add mood tracker feature with daily prompt (resolves #123)"
-git push origin feature/add-mood-tracker
-```
+## Community & conduct
 
+We follow a **Code of Conduct**. Be respectful, assume good intent, prefer public discussion, and help newcomers. If you feel pressured or harassed, contact the maintainers privately; we will act.
 
-(Replace “feature/add-mood-tracker” with your branch name.) Push your branch to your GitHub fork.
-5\. **Open a Pull Request:** Go to your fork on GitHub and click “Compare & Pull Request.” Fill out the PR template, describing your changes in detail and linking any relevant issue numbers (e.g., “Closes #123”). Explain **why** the change is beneficial and any new dependencies or potential impacts it introduces. Mark the PR as draft if it’s not ready for full review.
-6\. **Code Review:** Project maintainers (or automated agents) will review your pull request. Please be open to feedback and make revisions if requested. Code review is a positive process to improve both the project and your contribution. You may be asked to adjust style, add tests, or clarify design decisions.
-7\. **Merge:** Once your PR is approved by maintainers (and passes continuous integration tests), it will be merged into the main codebase. Congratulations – you’ve contributed to Lucy in the Loop! 🎉  (If you have write access and are merging yourself, ensure at least one other person reviewed, and do not self-merge without review except for trivial fixes.)
+---
 
-### Documentation Contributions
+## How to get help
 
-For contributions to documentation or non-code content, a similar process applies:
+* Questions: open a **Discussion**.
+* Bugs/feature requests: open an **Issue** with repro steps or use cases.
+* Security issues: follow the **Security Policy**.
+* Ethical/safety concerns: use the “Ethical Issue” template; these are triaged immediately.
 
-* **Clarity and Accessibility:** Write in clear, easy-to-understand English. Our docs aim to be accessible to a broad audience (developers, clinicians, general users), so avoid unnecessary jargon and define terms when first used.
-* **Structure:** Use Markdown formatting consistently. Follow the style of existing docs for headings, bullet points, etc., to maintain uniformity. If adding a new document, consider where it fits in the documentation hierarchy.
-* **Examples and Diagrams:** Provide examples (code snippets, command usage, screenshots/diagrams) where helpful. For instance, if you’re writing a tutorial on configuring Lucy’s privacy settings, include sample config excerpts. Visual aids like architecture diagrams are welcome (ensure they are clear and have alt text for accessibility).
-* **Translation:** If contributing a translation, ensure you are fluent in the target language and consider cultural context for mental health terminology. Possibly coordinate with others if multiple translators are involved.
+---
 
-As with code, you can propose doc changes via pull requests. Documentation changes also go through review to ensure accuracy and coherence.
+## Thank you
 
-### Community and Support
-
-Aside from direct contributions, you can also help by engaging with the community:
-
-* Answer user questions in the GitHub Discussions or forums if you know the solution.
-* Suggest design improvements or point out areas of code that could use refactoring (the AI Refactoring Agent appreciates human perspective too!).
-* Help triage issues – label bugs, confirm if you can reproduce issues on your setup, or close issues that are resolved.
-
-All contributors should also be mindful of our **Ethical Standards**: always prioritize user well-being, privacy, and transparency in any contribution. Lucy in the Loop is a mission-driven project, and we value contributions that uphold our commitment to ethical AI.
-
-Thank you for contributing your time and expertise to Lucy in the Loop! Together, we’re advancing the future of accessible, ethical mental health care, one commit at a time.
+By contributing, you’re helping build a privacy‑first, compassionate AI that puts human well‑being first. We’re grateful for your time and we promise to protect it.
