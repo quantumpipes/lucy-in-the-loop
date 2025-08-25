@@ -211,6 +211,13 @@ For cross‑cutting designs (new agent frameworks, storage formats, core prompts
   ```
 * When importing third‑party code/models, verify license compatibility and include notices in `THIRD_PARTY_LICENSES`.
 
+### Sanctions and Export Compliance
+
+By contributing, you represent that you are not a person or entity subject to
+sanctions or export restrictions (e.g., on OFAC or BIS denied lists) and are not
+located in a comprehensively embargoed jurisdiction. Do not contribute if such
+restrictions apply to you. See `EXPORT.md` for project stance and references.
+
 ---
 
 ## Commit message conventions (example)

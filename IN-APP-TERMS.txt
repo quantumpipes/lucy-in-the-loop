@@ -1,10 +1,39 @@
-By continuing, you agree:
+IN-APP TERMS (Clickwrap)
 
-- Not medical advice: Lucy is not a doctor/therapist/emergency service.
-- High-risk uses prohibited: do not use for clinical decisions, life support, or other high-risk contexts.
-- Outputs may be wrong: you must review and verify before acting.
-- Warranty/liability: provided AS IS; liability disclaimed to the maximum extent permitted by law.
-- Privacy: designed to run offline/local-first. See privacy policy.
+By clicking “I Agree,” installing, or using the software (“Lucy”), you accept these terms. If you do not agree, do not use Lucy.
+
+1) No Professional Advice; No Emergency Use
+   • Lucy provides general wellness and educational information only. It is not medical, psychological, legal, or financial advice.
+   • Lucy is not an emergency service. If you are in crisis or think you may harm yourself or others, call or text 988 in the U.S., or your local emergency number.
+
+2) Use at Your Own Risk; No Duty to Monitor
+   • Outputs may be inaccurate, incomplete, or inappropriate. Review before acting. No clinician‑patient relationship is formed.
+   • Lucy may implement safety interlocks and show crisis resources when high‑risk intent is detected. You consent to these interventions.
+
+3) High‑Risk Uses Prohibited
+   • Do not use Lucy for clinical diagnosis or treatment, life support, emergency dispatch, aviation, nuclear, or other safety‑critical contexts.
+
+4) Age Gate
+   • Intended for adults (18+). Ages 13–17 only with verified parental consent and professional oversight. Not for children under 13.
+
+5) Privacy and Data Handling
+   • Default operation is offline/local‑only; data is stored on your device. If you opt into any connectivity or sharing features, Lucy will disclose and obtain consent first. See docs/privacy-policy.md.
+
+6) Disclaimers and Liability Cap
+   • Provided “AS IS” and “WITH ALL FAULTS,” without warranties (including merchantability, fitness, accuracy, non‑infringement).
+   • To the maximum extent permitted by law, Project Parties are not liable for indirect/special/consequential damages; direct damages are capped at US $100 or amounts paid in the prior 12 months, whichever is greater.
+
+7) Dispute Resolution and Governing Law
+   • If you are a U.S. resident: Delaware law (conflicts excluded); binding arbitration and class‑action waiver to the extent permitted by law; venue Wilmington, DE.
+   • Outside the U.S.: mandatory local consumer laws prevail where required.
+
+8) Safety Triggers and Temporary Restrictions
+   • You agree Lucy may temporarily restrict certain prompts or features when high‑risk intent is detected and present crisis resources.
+
+9) Exports and Sanctions
+   • You represent you are not a prohibited party and will comply with export/sanctions laws. See EXPORT.md.
+
+10) Changes
+   • These terms may be updated in the repository; material changes will be presented for acceptance. Version history is maintained.
 
 Press “I Agree” to continue.
-

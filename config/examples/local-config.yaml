@@ -1,0 +1,36 @@
+# Lucy in the Loop — Local Configuration (example)
+# Copy this file to ~/.lucy/local-config.yaml and edit values as needed.
+
+version: 1
+
+server:
+  # Default port for the local web interface
+  port: 5829
+  # 127.0.0.1 = localhost only; 0.0.0.0 = all local interfaces
+  bind_host: 127.0.0.1
+  # Explicit opt-in for LAN exposure; keep false unless you understand the risks
+  expose_on_local_network: false
+  # Require a token for non-local clients when LAN exposure is enabled
+  require_auth_for_non_local: true
+  # Name of the environment variable that must contain a strong token
+  auth_token_env_var: LUCY_ACCESS_TOKEN
+  # Additional allowed origins for the web app (CORS). Keep tight.
+  allowed_origins: ["http://localhost:5829"]
+
+privacy:
+  # Strict offline mode: no network access, only local resources
+  offline_only: true
+
+models:
+  # Select the primary model to use by default (local model name or provider model id)
+  preferred_model: "llama-3.1-8b-instruct-q4"
+  # Directory for local models
+  storage_dir: "~/.lucy/models"
+  # Providers allowed when offline_only is false. In offline mode, only "local" is used.
+  allowed_providers: ["local"]
+  # Offer newly supported frontier models in the UI (when not offline)
+  auto_offer_frontier: true
+  # Channels of frontier models to surface
+  frontier_channels: ["stable", "beta"]
+
+

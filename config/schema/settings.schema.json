@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quantumpipes.github.io/lucy-in-the-loop/schemas/settings.schema.json",
+  "title": "Lucy in the Loop Settings",
+  "description": "Versioned settings for network access, model selection, and offline mode.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535,
+          "default": 5829
+        },
+        "bind_host": {
+          "type": "string",
+          "default": "127.0.0.1"
+        },
+        "expose_on_local_network": {
+          "type": "boolean",
+          "default": false
+        },
+        "require_auth_for_non_local": {
+          "type": "boolean",
+          "default": true
+        },
+        "auth_token_env_var": {
+          "type": "string",
+          "default": "LUCY_ACCESS_TOKEN"
+        },
+        "allowed_origins": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["http://localhost:5829"]
+        }
+      },
+      "required": ["port", "bind_host", "expose_on_local_network", "require_auth_for_non_local", "auth_token_env_var", "allowed_origins"]
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "offline_only": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "required": ["offline_only"]
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferred_model": { "type": "string" },
+        "storage_dir": { "type": "string" },
+        "allowed_providers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "local",
+              "huggingface",
+              "openai",
+              "anthropic",
+              "google",
+              "meta"
+            ]
+          },
+          "default": ["local"]
+        },
+        "auto_offer_frontier": {
+          "type": "boolean",
+          "default": true
+        },
+        "frontier_channels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["stable", "beta", "nightly"]
+          },
+          "default": ["stable", "beta"]
+        }
+      },
+      "required": ["preferred_model", "allowed_providers", "auto_offer_frontier", "frontier_channels"]
+    }
+  },
+  "required": ["version", "server", "privacy", "models"]
+}
+
+

@@ -29,6 +29,7 @@ parental consent and professional oversight; no use by children under 13.
 modify configurations or code. All outputs are generated text or signals that
 may be inaccurate or inappropriate. YOU must independently review outputs and
 changes before acting on them.
+   • See OUTPUTS-LICENSE.md for terms governing ownership and use of model outputs.
 
 6) Privacy. The Software is designed to operate offline with local storage by
 default. You control your data on your device. See docs/privacy-policy.md for details.
@@ -53,9 +54,10 @@ INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE, OR INCREASED DAMAGES,
 OR FOR LOST PROFITS, REVENUE, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES,
 ARISING OUT OF OR RELATING TO THE SOFTWARE OR ITS USE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES. WHERE A LIMITATION IS NOT ENFORCEABLE, THE TOTAL
-AGGREGATE LIABILITY SHALL NOT EXCEED USD $0 (OR, IF NOT PERMITTED, THE LOWEST
-AMOUNT PERMITTED BY LAW). SOME JURISDICTIONS DO NOT ALLOW CERTAIN DISCLAIMERS;
-YOUR STATUTORY RIGHTS REMAIN.
+AGGREGATE LIABILITY FOR DIRECT DAMAGES SHALL NOT EXCEED THE GREATER OF USD $100
+OR THE AMOUNTS YOU PAID (IF ANY) FOR THE SOFTWARE IN THE TWELVE (12) MONTHS
+PRECEDING THE EVENT GIVING RISE TO THE CLAIM. SOME JURISDICTIONS DO NOT ALLOW
+CERTAIN DISCLAIMERS; YOUR MANDATORY STATUTORY RIGHTS REMAIN.
 
 11) Indemnity. You will defend, indemnify, and hold harmless Quantum Pipes,
 contributors, and maintainers from claims arising from your use or distribution
@@ -63,6 +65,13 @@ of the Software, your plugins, or your violation of this EULA or law.
 
 12) Export & Sanctions. You will comply with applicable export/sanctions rules.
 See EXPORT.md.
+
+12a) EU AI Act Notice. If you distribute or make available the Software in the
+European Union, you agree to comply with applicable obligations under Regulation
+(EU) 2024/1689 (the “AI Act”). If acting as a general‑purpose AI (GPAI) provider,
+publish model documentation and implement risk measures consistent with the
+GPAI Code of Practice; if acting as a deployer, implement appropriate transparency,
+logging, and risk controls for your use case. See docs/transparent-autonomy-policy.md.
 
 13) Governing Law & Dispute Resolution.
    • If you are a U.S. resident: this EULA is governed by the laws of

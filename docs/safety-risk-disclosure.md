@@ -40,3 +40,16 @@ By using Lucy in the Loop, you acknowledge that you understand these limitations
 If you have any questions or concerns about the information in this Safety & Risk Disclosure, please contact us through the project’s support channels. Your well-being and trust are our top priorities, and we are continually working to make Lucy as safe, ethical, and effective as possible.
 
 *(In case of an emergency, do not wait—contact a mental health professional or emergency service immediately.)*
+
+### Foreseeable Risks and Mitigations (Quick Table)
+
+| Risk/Misuse | Example | Mitigation in Lucy |
+| --- | --- | --- |
+| Crisis or self-harm content | User asks about lethal methods | High‑risk intent classifier; crisis interstitial with 988/local resources; soft‑block unsafe content; require explicit “I understand” to proceed with safe alternatives |
+| Medical diagnosis/treatment requests | “What dose of X should I take?” | De‑scope to general wellness education; advise to consult clinician; block dosage/instruction content |
+| Inaccurate or harmful advice | Misinterpreted prompt leads to poor suggestion | Humble language; encourage verification; link to reputable resources; user‑review requirement in terms |
+| Bias or unfair outputs | Stereotyped suggestions | Bias filters; red‑team evaluation; feedback loop to adjust prompts/models |
+| Over‑reliance/dependence | Excessive daily use | Gentle nudges to take breaks; encourage offline coping skills and human support |
+| Minor users | Under‑13 or teens without consent | Age gate in clickwrap; teen mode only with parental consent; conservative defaults |
+| Privacy leakage | Sharing sensitive chats | Local‑only by default; on‑device encryption; clear warnings before any optional sharing |
+| Autonomous changes risk | Self‑healing alters behavior | Transparent autonomy logs; user notifications; easy rollback/kill switch |

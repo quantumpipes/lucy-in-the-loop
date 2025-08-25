@@ -95,3 +95,11 @@ We treat transparency as an evolving feature. We gather feedback:
 In conclusion, the Transparent Autonomy Policy ensures Lucy remains a *partner* rather than an inscrutable machine. Autonomy here does not mean secretiveness; it means efficiency and self-direction accompanied by openness and user empowerment. Users and developers should feel that Lucy is *with them in the loop*, even as it does a lot on its own. Through thorough logging, explanations, notifications, and control mechanisms, we ensure that *nothing significant happens without someone (user or overseer) being aware and able to intervene*. This transparency is key to maintaining trust as Lucy’s autonomy grows.
 
 *(For more information, see Appendix: "Audit Log Schema & Access Instructions" and "User Rights and Controls Overview" in our documentation, which detail how to inspect logs and use the provided autonomy controls.)*
+
+### EU AI Act Transparency Notes (GPAI Provider/Deployer Context)
+
+If distributed in the European Union:
+
+- We will provide model and system documentation aligned with the General‑Purpose AI (GPAI) Code of Practice, including training data summaries, known limitations, and evaluation results where applicable.
+- Deployers should enable local logging of key events (advice category, safety filter activations, user consents) and expose user‑facing notices that clearly label AI‑generated content and system limitations.
+- We will maintain on‑device export of audit logs to support user rights, regulatory audits, and incident analysis without transmitting personal data off‑device.

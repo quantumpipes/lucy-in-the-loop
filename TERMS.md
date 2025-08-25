@@ -25,11 +25,16 @@ before deployment in your environment.
 third‑party dependencies, models, or plugins and their licenses. Maintainers do
 not audit third‑party contributions. See PLUGIN-TERMS.md.
 
-5) No Warranties; Use at Your Own Risk. To the maximum extent permitted by law,
-the repository, code, models, and documentation are provided “AS IS” and “WITH
-ALL FAULTS,” without warranties of any kind (express, implied, or statutory),
-including without limitation merchantability, fitness for a particular purpose,
-accuracy, non‑infringement, or that outputs are correct, safe, or suitable.
+4a) Outputs License. You own your prompts and, to the extent permitted by law,
+your outputs. Outputs are informational and may be wrong or unsafe if misused.
+See OUTPUTS-LICENSE.md for additional terms governing model outputs.
+
+5) No Warranties; Assumption of Risk. To the maximum extent permitted by law,
+the repository, code, models, documentation, and outputs are provided “AS IS”
+and “WITH ALL FAULTS,” without warranties of any kind (express, implied, or
+statutory), including without limitation merchantability, fitness for a
+particular purpose, accuracy, non‑infringement, or that outputs are correct,
+safe, or suitable. You understand and agree you use Lucy at your own risk.
 
 6) Limitation of Liability. To the maximum extent permitted by law, Quantum Pipes, LLC,
 contributors, and maintainers will not be liable for any indirect, incidental,
@@ -37,8 +42,9 @@ special, consequential, exemplary, punitive, or increased damages, or for lost
 profits, revenues, data, goodwill, or other intangible losses, arising out of or
 relating to your use of the repository or any derivatives, even if advised of the
 possibility of such damages. Where a limitation of liability is not enforceable,
-the total aggregate liability shall not exceed USD $0 (or the minimum amount
-permitted by applicable law if a zero cap is not permitted).
+the total aggregate liability for direct damages shall not exceed the greater of
+USD $100 or the amounts you paid (if any) for the software in the twelve (12)
+months preceding the event giving rise to the claim.
 
 7) Indemnity. You agree to defend, indemnify, and hold harmless Quantum Pipes, LLC,
 contributors, and maintainers from and against claims, losses, liabilities,
@@ -54,4 +60,12 @@ is governed by TRADEMARKS.md and does not imply endorsement.
 
 10) Changes. Terms may be updated in the repository. Continued use after changes
 means acceptance. Version history is maintained in Git.
+
+11) EU AI Act Notice. If you distribute, deploy, or make available Lucy in the
+European Union, you agree to comply with applicable obligations under Regulation
+(EU) 2024/1689 (the “AI Act”). If you act as a general‑purpose AI (GPAI) provider,
+you will prepare and publish model documentation and risk measures consistent with
+the applicable Code of Practice; if you act as a deployer, you will implement
+appropriate transparency, logging, and risk controls for your use case. See
+docs/transparent-autonomy-policy.md for transparency and logging practices.
 

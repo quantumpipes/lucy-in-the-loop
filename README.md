@@ -1,3 +1,7 @@
+> Wellness/Education only — not medical care and not for emergencies. If you are in crisis, in the U.S. call or text 988, or contact your local emergency number. By using Lucy you agree to the In‑App Terms and Medical Disclaimer.
+>
+> See: [IN-APP-TERMS.txt](./IN-APP-TERMS.txt) • [MEDICAL-DISCLAIMER.md](./MEDICAL-DISCLAIMER.md) • [TERMS.md](./TERMS.md)
+
 ## README – Mission, Vision, and Usage Guide
 
 Note on repository status: This repository currently contains legal, governance, and design documentation. The application code has not yet been published. Any references to commands, ports, dashboards, or binaries describe planned functionality for the initial MVP and are not runnable today.
@@ -98,6 +102,12 @@ to allow Lucy’s local performance agents to start, and you can configure prefe
 *(The above are accessible only on your machine and are optional tools for power users; the primary interaction is via the chat interface.)*
 
 For any issues during setup or runtime, consult the **Community and Support** section of the README or open an issue on GitHub. Lucy is under active development, and we welcome feedback to improve the installation and user experience.
+
+### Configuration (planned)
+
+- Default config file path: `~/.lucy/local-config.yaml` (override with `LUCY_CONFIG`)
+- See detailed settings, including network access opt-in, model selection, and local-only mode in: [`docs/settings-and-configuration.md`](./docs/settings-and-configuration.md)
+- A JSON Schema is provided at `config/schema/settings.schema.json` and an example config at `config/examples/local-config.yaml`.
 
 ### Legal & Disclaimers
 

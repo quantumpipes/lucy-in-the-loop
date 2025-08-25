@@ -12,3 +12,17 @@ Response targets (non-binding):
 
 Coordinated disclosure timelines may be adjusted by mutual agreement with reporters.
 
+## Breach Notifications (HBNR, State Laws)
+
+If an incident involves unauthorized acquisition of identifiable health data (as
+that concept is defined under the FTC Health Breach Notification Rule), we will:
+
+- Evaluate HBNR applicability and any overlapping state health‑privacy laws.
+- Notify affected individuals without unreasonable delay, and notify the FTC and
+  media as required by HBNR for incidents affecting 500+ individuals.
+- Where state requirements are stricter (e.g., WA My Health My Data Act, CA CPRA/CMIA),
+  follow the most protective timeline and content requirements.
+
+This subsection is informational and does not create additional rights. See SECURITY.md
+for operational steps and contacts.
+
